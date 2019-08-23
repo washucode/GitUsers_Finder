@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GitSearchNavComponent } from './git-search-nav/git-search-nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GitSearchNavComponent
   ],
   imports: [
     BrowserModule,

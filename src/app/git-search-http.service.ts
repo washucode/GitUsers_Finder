@@ -25,6 +25,7 @@ export class GitSearchHttpService {
         (result)=>{
            this.user = new GitUsers(result.name,result.username,result.profilepicUrl,result.accountUrl,result.numberRepos,result.followers,result.following,result.created_at)
            resolve()
+           console.log(result);
         },(error)=>{
           console.log(error);
           reject(error);

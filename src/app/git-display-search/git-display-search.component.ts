@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./git-display-search.component.css']
 })
 export class GitDisplaySearchComponent implements OnInit {
-
+  parentGetResult(searchTerm){
+    console.log(searchTerm);
+  }
   constructor() { }
 
   ngOnInit() {

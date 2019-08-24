@@ -1,1 +1,7 @@
-<p>git-search-form works!</p>
+<form class="navbar-form navbar-left" #formSearch = 'ngForm'>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" name = 'search'>
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+</form>
+<p>{{searchTerm}}</p>

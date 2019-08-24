@@ -1,7 +1,17 @@
-<form class="navbar-form navbar-left" #formSearch = 'ngForm'>
+<!-- <form class="navbar-form navbar-left" #formSearch = 'ngForm'>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" name = 'search'>
     </div>
     <button type="submit" class="btn btn-default">Search</button>
+</form> -->
+
+<form  class ="mt-10 " justify-content-center #formSearch = 'ngForm'>
+    <div class="input-group  bg-dark " >
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" name = 'search'>
+      <div class="input-group-btn">
+        <button class="btn btn-default bg-dark" type="submit">
+          <i class="fa fa-search" style="color:white;"></i>
+        </button>
+      </div>
+    </div>
 </form>
-<p>{{searchTerm}}</p>

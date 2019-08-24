@@ -7,7 +7,8 @@ import { GitSearchNavComponent } from './git-search-nav/git-search-nav.component
 import { GitSearchComponent } from './git-search/git-search.component';
 import { GitDisplaySearchComponent } from './git-display-search/git-display-search.component';
 import { GitSearchFormComponent } from './git-search-form/git-search-form.component';
-import {HttpClient } from '@angular/common/http'
+import {HttpClientModule } from '@angular/common/http';
+import {HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import {HttpClient } from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

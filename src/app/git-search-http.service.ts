@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {GitUsers} from './git-users';
+import {UserRepo} from './user-repo';
 import { environment } from './../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class GitSearchHttpService {
   user : GitUsers;
-  constructor(private http : HttpClient) { }
+  repo : UserRepo;
+  getrepo : any;
+ 
+  constructor(private http : HttpClient) {
+    this.user = new GitUsers("","","","","",0,0,new Date());
+    this.repo = new UserRepo('','','',new Date())
+   }
 
   getUserResult(searchTerm:string){
     interface UserResult{
@@ -33,7 +40,26 @@ export class GitSearchHttpService {
     })
     return promise
   }
+  getRepos(searchTerm:string){
+    interface RepoResult{
+      repoName:string;
+      repourl:string;
+      description:string;
+      repoCreated:Date;
+    }
+    let myPromise = new Promise((resolve,reject)=>{
+      this.http.get<RepoResult>("https://api.github.com/users/"+searchTerm+"/repos?order=created&sort=asc?access_token="+environment.gitApi).toPromise().then(
+        (repoResult)=>{
+        this.getrepo = repoResult;
+        console.log(repoResult);
+        resolve()
+      },error=>{
+        reject(error);
+      })
+    })
+    return myPromise;
  }
  
-  
+ 
 
+}

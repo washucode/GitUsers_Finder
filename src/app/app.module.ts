@@ -9,6 +9,7 @@ import { GitDisplaySearchComponent } from './git-display-search/git-display-sear
 import { GitSearchFormComponent } from './git-search-form/git-search-form.component';
 import {HttpClientModule } from '@angular/common/http';
 import {HttpClient } from '@angular/common/http';
+import {GitSearchHttpService} from './git-search-http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import {HttpClient } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GitSearchHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

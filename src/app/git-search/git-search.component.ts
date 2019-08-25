@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { GitUsers} from '../git-users';
+import {UserRepo} from '../user-repo';
+import {GitSearchHttpService} from '../git-search-http.service';
 
 @Component({
   selector: 'app-git-search',
   templateUrl: './git-search.component.html',
-  styleUrls: ['./git-search.component.css']
+  styleUrls: ['./git-search.component.css'],
+  providers :[GitSearchHttpService],
 })
 export class GitSearchComponent implements OnInit {
+   public searchTerm : string ;
+  user : GitUsers;
+  repo : UserRepo;
 
-  constructor() { }
+  constructor( public searchService:GitSearchHttpService) { }
 
   ngOnInit() {
+    this.parentGetResult();
   }
+  parentGetResult(){
+    this.searchService.getUserResult(this.searchTerm).then(
+      ()=>{
+        this.user = this.searchService.user;
+      },
+      (error)=>{
+         console.log(error);
+      })
+ 
+    this.searchService.getRepos(this.searchTerm).then(
+      ()=>{
+        this.repo = this.searchService.repo;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
 
+}
 }

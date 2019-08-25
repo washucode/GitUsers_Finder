@@ -4,7 +4,7 @@ export class UserRepo {
         public repoUrl:string,
         public description:string,
         public repoCreated: Date,
-        created_at : Date,
+        
 
     ){
 

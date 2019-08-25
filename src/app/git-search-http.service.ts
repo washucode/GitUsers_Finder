@@ -59,7 +59,26 @@ export class GitSearchHttpService {
     })
     return myPromise;
  }
- 
+
+ getOtherRepos(searchTerm:string){
+  interface RepoResult{
+    repoName:string;
+    repourl:string;
+    description:string;
+    repoCreated:Date;
+  }
+  let myPromise = new Promise((resolve,reject)=>{
+    this.http.get<RepoResult>("https://api.github.com/search/repositories?q="+searchTerm+environment.gitApi).toPromise().then(
+      (repoResult)=>{
+      this.getrepo = repoResult;
+      console.log(repoResult);
+      resolve()
+    },error=>{
+      reject(error);
+    })
+  })
+  return myPromise;
+}
  
 
 }

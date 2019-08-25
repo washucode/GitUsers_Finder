@@ -10,7 +10,7 @@ import {GitSearchHttpService} from '../git-search-http.service';
   providers :[GitSearchHttpService],
 })
 export class GitSearchComponent implements OnInit {
-   public searchTerm : string ;
+   public searchTerm : string = 'washucode';
   user : GitUsers;
   repo : UserRepo;
 

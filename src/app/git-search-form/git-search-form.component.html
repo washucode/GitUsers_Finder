@@ -7,7 +7,7 @@
 
 <form  class ="mt-10 " justify-content-center #formSearch = 'ngForm'>
     <div class="input-group  bg-dark " >
-      <input type="text" class="form-control" placeholder="Search:enter github username" [(ngModel)]="searchTerm" name = 'search'>
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" name = 'search'>
       <div class="input-group-btn">
         <button class="btn btn-default bg-dark" type="submit" (click)='getResult()'>
           <i class="fa fa-search" style="color:white;"></i>

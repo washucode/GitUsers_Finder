@@ -1,9 +1,9 @@
 export class UserRepo {
     constructor(
-        public repoName:string,
-        public repoUrl:string,
+        public name:string,
+        public html_url:string,
         public description:string,
-        public repoCreated: Date,
+        public created_at: Date,
         
 
     ){

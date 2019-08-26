@@ -1,13 +1,13 @@
 export class GitUsers {
     constructor(
         public name:string,
-        public username:string,
-        public profilepicUrl:string,
-        public accountUrl:string,
-        public numberRepos : string,
+        public login:string,
+        public avatar_url:string,
+        public html_url:string,
+        public pulic_repos :number,
         public followers : number,
         public following :number,
-        created_at : Date
+        public created_at : Date
 
     ){
 

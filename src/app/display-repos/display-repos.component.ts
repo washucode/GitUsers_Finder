@@ -7,14 +7,14 @@ import {GitSearchHttpService} from '../git-search-http.service';
   styleUrls: ['./display-repos.component.css']
 })
 export class DisplayReposComponent implements OnInit {
-  repo : UserRepo;
+  repo: any;
   searchTerm : string;
-  constructor(public searchService:GitSearchHttpService) { }
+  constructor(private searchService:GitSearchHttpService) { }
 
   ngOnInit() {
   }
   parentGetResult(searchTerm){
-    this.searchService.getRepos(searchTerm).then(
+    this.searchService.getOtherRepos(searchTerm).then(
       ()=>{
         this.repo = this.searchService.repo;
       },

@@ -71,8 +71,8 @@ export class GitSearchHttpService {
   let myPromise = new Promise((resolve,reject)=>{
     this.http.get<RepoResult>("https://api.github.com/search/repositories?q="+searchTerm+environment.gitApi).toPromise().then(
       (repoResult)=>{
-      
-      console.log(repoResult);
+        this.repo = repoResult;
+        console.log(repoResult);
       resolve()
     },error=>{
       reject(error);

@@ -11,6 +11,7 @@ import {HttpClientModule } from '@angular/common/http';
 import {HttpClient } from '@angular/common/http';
 import {GitSearchHttpService} from './git-search-http.service';
 import { DisplayReposComponent } from './display-repos/display-repos.component';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { DisplayReposComponent } from './display-repos/display-repos.component';
     GitDisplaySearchComponent,
     GitSearchFormComponent,
     DisplayReposComponent,
+    HighlightDirective,
    
   ],
   imports: [

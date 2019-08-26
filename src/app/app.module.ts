@@ -12,6 +12,7 @@ import {HttpClient } from '@angular/common/http';
 import {GitSearchHttpService} from './git-search-http.service';
 import { DisplayReposComponent } from './display-repos/display-repos.component';
 import { HighlightDirective } from './highlight.directive';
+import { DatepipePipe } from './datepipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { HighlightDirective } from './highlight.directive';
     GitSearchFormComponent,
     DisplayReposComponent,
     HighlightDirective,
+    DatepipePipe,
    
   ],
   imports: [

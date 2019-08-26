@@ -6,7 +6,16 @@
 body{
     font-family: Raleway;
 }
-
+.card-img{
+    width:60%;
+    text-align: center;
+    margin-left:20%;
+    border-radius: 40%;
+   
+}
+h1{
+    text-align: center;
+}
 
 /* div.container
 {

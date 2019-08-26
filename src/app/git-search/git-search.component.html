@@ -13,7 +13,7 @@
                     <p>Number of Repositories: {{user.public_repos}}</p>
                     <p>Followers: {{user.followers}}</p>
                     <p>Following: {{user.following}}</p>
-                    <p>Date Created : {{user.created_at}}</p>
+                    <p>Date Created : {{user.created_at|datepipe}}</p>
                 </div>
                 
                 
@@ -29,7 +29,7 @@
                  <div class="card-body" > 
                     <p>Repository Name:<a href="{{repos.html_url}}" appHighlight>{{repos.name}}</a></p> 
                     <p>Description: {{repos.description}}</p>
-                    <p>Date Created: {{repos.created_at}}</p>
+                    <p>Date Created: {{repos.created_at|datepipe}}</p>
                  </div>
             </div>
                 

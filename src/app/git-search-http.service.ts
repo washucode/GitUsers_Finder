@@ -9,19 +9,19 @@ import { environment } from './../environments/environment';
 export class GitSearchHttpService {
   user : GitUsers;
   repo : UserRepo;
-  getrepo : any;
+  
  
   constructor(private http : HttpClient) {
     this.user = new GitUsers("","","","",0,0,0,new Date());
-    this.repo = new UserRepo('','','',new Date())
+    this.repo = new UserRepo("","","",new Date());
    }
 
   getUserResult(searchTerm:string){
     interface UserResult{
       name:string;
-   login : string;
+      login:string;
       avatar_url:string;
-      html_url : string;
+      html_url:string;
       public_repos:0;
       followers:0;
       following:0;
@@ -50,8 +50,9 @@ export class GitSearchHttpService {
     let myPromise = new Promise((resolve,reject)=>{
       this.http.get<RepoResult>("https://api.github.com/users/"+searchTerm+"/repos?order=created&sort=asc?access_token="+environment.gitApi).toPromise().then(
         (repoResult)=>{
-        this.getrepo = repoResult;
-        console.log(repoResult);
+          this.repo = repoResult;
+         
+        
         resolve()
       },error=>{
         reject(error);
@@ -70,7 +71,7 @@ export class GitSearchHttpService {
   let myPromise = new Promise((resolve,reject)=>{
     this.http.get<RepoResult>("https://api.github.com/search/repositories?q="+searchTerm+environment.gitApi).toPromise().then(
       (repoResult)=>{
-      this.getrepo = repoResult;
+      
       console.log(repoResult);
       resolve()
     },error=>{

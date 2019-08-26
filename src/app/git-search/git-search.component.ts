@@ -14,7 +14,7 @@ export class GitSearchComponent implements OnInit {
   user : GitUsers;
   repo : UserRepo;
 
-  constructor( public searchService:GitSearchHttpService) { }
+  constructor( public searchService:GitSearchHttpService,private searchService2:GitSearchHttpService) { }
 
   ngOnInit() {
     this.parentGetResult();
@@ -28,9 +28,9 @@ export class GitSearchComponent implements OnInit {
          console.log(error);
       })
  
-    this.searchService.getRepos(this.searchTerm).then(
+    this.searchService2.getRepos(this.searchTerm).then(
       ()=>{
-        this.repo = this.searchService.repo;
+        this.repo = this.searchService.repo2;
       },
       (error)=>{
         console.log(error);

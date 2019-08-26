@@ -10,10 +10,10 @@ import {UserRepo} from '../user-repo';
 })
 export class GitDisplaySearchComponent implements OnInit {
   user : GitUsers;
-  repo : UserRepo;
+  repo : any;
   searchTerm : string;
   
-  constructor(public searchService:GitSearchHttpService) { }
+  constructor(public searchService:GitSearchHttpService, private searchService2:GitSearchHttpService) { }
   
   ngOnInit() {
   }
@@ -26,9 +26,9 @@ export class GitDisplaySearchComponent implements OnInit {
         console.log(error);
      })
 
-   this.searchService.getRepos(searchTerm).then(
+   this.searchService2.getRepos(searchTerm).then(
      ()=>{
-       this.repo = this.searchService.repo;
+       this.repo = this.searchService2.repo;
      },
      (error)=>{
        console.log(error);
